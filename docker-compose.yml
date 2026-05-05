@@ -2,14 +2,14 @@ version: "3.9"
 
 services:
   db:
-    image: wbouwmans/docker-workshop-db
+    image: wedsel2/docker-workshop-db
     environment:
       POSTGRES_DB: moviereviews
       POSTGRES_USER: appuser
       POSTGRES_PASSWORD: apppass
 
   web:
-    image: wbouwmans/docker-workshop-webapp
+    image: wedsel2/docker-workshop-webapp
     depends_on:
       - db
     environment:
