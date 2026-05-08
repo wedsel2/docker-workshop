@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "docker-workshop"
+version = "1.0.0"
+description = "Docker workshop with Flask and PostgreSQL"
+authors = ["wedsel2"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "3.0.3"
+psycopg2-binary = "2.9.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
