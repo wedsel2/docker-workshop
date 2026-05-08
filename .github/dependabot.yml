@@ -1,0 +1,29 @@
+version: 3
+updates:
+  # Python dependency updates
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-type: "all"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "[deps]"
+      include: "scope"
+    pull-request-branch-name:
+      separator: "/"
+
+  # Docker base image updates
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-type: "all"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "[docker]"
+      include: "scope"
+    pull-request-branch-name:
+      separator: "/"
