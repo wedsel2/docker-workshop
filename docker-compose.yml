@@ -5,17 +5,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.db
-    image: wedsel2/docker-workshop-db:16
+    image: wedsel2/docker-workshop-db:latest
     environment:
       POSTGRES_DB: moviereviews
       POSTGRES_USER: appuser
       POSTGRES_PASSWORD: apppass
-
   web:
     build:
       context: .
       dockerfile: Dockerfile.web
-    image: wedsel2/docker-workshop-webapp:1.0.0
+    image: wedsel2/docker-workshop-webapp:latest
     depends_on:
       - db
     environment:
