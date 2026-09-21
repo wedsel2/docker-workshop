@@ -2,22 +2,16 @@ version: "3.9"
 
 services:
   db:
-    build:
-      context: .
-      dockerfile: Dockerfile.db
     image: wedsel2/docker-workshop-db:latest
     environment:
       POSTGRES_DB: moviereviews
       POSTGRES_USER: appuser
       POSTGRES_PASSWORD: apppass
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile.web
     image: wedsel2/docker-workshop-webapp:latest
     depends_on:
       - db
     environment:
       DB_HOST: db
     ports:
-      - "8000:8000"
+      - "80:8000"

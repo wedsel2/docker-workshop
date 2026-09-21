@@ -21,6 +21,7 @@ POSTGRES_PASSWORD: apppass
 ```powershell
 docker network create workshop-net
 docker run -d --name db --network workshop-net -e POSTGRES_DB=moviereviews -e POSTGRES_USER=appuser -e POSTGRES_PASSWORD=apppass wedsel2/docker-workshop-db
+docker run -d --name web --network workshop-net -e DB_HOST=db -p 8000:8000 wedsel2/docker-workshop-webapp
 ```
 
 This container is intended to be used by the workshop web app image on the same Docker network.
